@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled/macro';
 import { Link } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
 import { GrHomeRounded } from 'react-icons/gr';
-import { IoLocationSharp } from 'react-icons/io5';
-import { AiOutlinePlusCircle } from 'react-icons/ai';
+import { IoLocationSharp, IoLocationOutline, IoHomeOutline, IoHomeSharp, IoBookmarkOutline, IoBookmark } from 'react-icons/io5';
+import { HiOutlinePlusCircle, HiPlusCircle } from 'react-icons/hi';
 import { BsBookmark } from 'react-icons/bs';
+import { selectedNavAtom } from '../../atoms';
 
 
 const Base = styled.div`
@@ -42,39 +44,64 @@ const ProfileImg = styled.img`
 `;
 
 const Navigation: React.FC = () => {
+  const [selectedNav, setSelectedNav] = useRecoilState(selectedNavAtom);
+
   return(
     <Base>
       <IconList>
         <li>
-          <StyledLink to="/">
+          <StyledLink to="/" onClick={() => setSelectedNav("home")}>
             <Icon>
-              <GrHomeRounded />
+              {
+                selectedNav==="home" ? (
+                  <IoHomeSharp />
+                ) : (
+                  <IoHomeOutline />
+                )
+              }            </Icon>
+          </StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/place" onClick={() => setSelectedNav("place")}>
+            <Icon>
+              {
+                selectedNav==="place" ? (
+                  <IoLocationSharp />
+                ) : (
+                  <IoLocationOutline />
+                )
+              }
             </Icon>
           </StyledLink>
         </li>
         <li>
-          <StyledLink to="/place">
+          <StyledLink to="/post" onClick={() => setSelectedNav("post")}>
             <Icon>
-              <IoLocationSharp />
+              {
+                selectedNav==="post" ? (
+                  <HiPlusCircle />
+                ) : (
+                  <HiOutlinePlusCircle />
+                )
+              }
             </Icon>
           </StyledLink>
         </li>
         <li>
-          <StyledLink to="/post">
+          <StyledLink to="/bookmark" onClick={() => setSelectedNav("bookmark")}>
             <Icon>
-              <AiOutlinePlusCircle />
-            </Icon>
+              {
+                selectedNav==="bookmark" ? (
+                  <IoBookmark />
+                ) : (
+                  <IoBookmarkOutline />
+                )
+              }            
+              </Icon>    
           </StyledLink>
         </li>
         <li>
-          <StyledLink to="/bookmark">
-            <Icon>
-              <BsBookmark />
-            </Icon>    
-          </StyledLink>
-        </li>
-        <li>
-          <StyledLink to="/mypage">
+          <StyledLink to="/mypage" onClick={() => setSelectedNav("mypage")}>
             <Icon>
               <ProfileImg src='assets/ky.jpg' />
             </Icon>     

@@ -1,14 +1,18 @@
 import React from 'react';
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 import HomePage from './components/pages/HomePage';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<HomePage />}/>
-      </Routes>
-    </BrowserRouter>
+    <RecoilRoot>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<HomePage />}/>
+        </Routes>
+      </BrowserRouter>
+    </RecoilRoot>
+
   );
 }
 
