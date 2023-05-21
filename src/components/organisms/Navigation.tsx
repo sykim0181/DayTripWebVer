@@ -10,7 +10,6 @@ import { selectedNavAtom } from '../../atoms';
 
 
 const Base = styled.div`
-  /* background-color: beige; */
   width: fit-content;
   height: fit-content;
 `;
@@ -23,7 +22,7 @@ const IconList = styled.ul`
 
   & li {
     list-style: none;
-    padding: 30px 10px;
+    padding: 30px 30px;
     color: black;
   }
 `;
@@ -33,7 +32,7 @@ const StyledLink = styled(Link)`
 `;
 
 const Icon = styled.div`
-  font-size: 40px;
+  font-size: 50px;
   cursor: pointer;
 `;
 
