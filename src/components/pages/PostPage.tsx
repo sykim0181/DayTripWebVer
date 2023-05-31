@@ -1,8 +1,10 @@
 import React, { useState, useRef } from 'react';
 import styled from '@emotion/styled/macro';
-import { AiOutlineClose, AiFillPlusCircle } from 'react-icons/ai';
+import { AiFillPlusCircle } from 'react-icons/ai';
 import BasicPage from './BasicPage';
 import OptionBlock from '../molecules/OptionBlock';
+import app from '../../Firebase';
+import { addDoc, collection, getFirestore } from 'firebase/firestore';
 
 const Base = styled.div`
 
@@ -83,7 +85,7 @@ const Photo = styled.img`
 
 const TextArea = styled.textarea`
   width: 800px;
-  height: 380px;
+  height: 420px;
   resize: none;
   border: none;
   padding: 30px;
@@ -109,6 +111,7 @@ const PostPage: React.FC = () => {
   const [imgUrlList, setImgUrlList] = useState(stringList);
 
   const fileInput = useRef<HTMLInputElement>(null);
+  const textAreaInput = useRef<HTMLTextAreaElement>(null);
 
   const fileBtnClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (fileInput.current)
@@ -129,18 +132,34 @@ const PostPage: React.FC = () => {
     }
   }
 
+  const db = getFirestore(app);
+
+  const postBtnClick = async () => {
+    try {
+      console.log(textAreaInput.current?.value);
+      const docRef = await addDoc(collection(db, "posts"), {
+        textContent: textAreaInput.current?.value,
+        photos: imgUrlList,
+        
+      });
+    } catch(e) {
+      console.error("Error adding document: ", e);
+    }
+  }
+
   return (
     <Base>
       <BasicPage>
         <Header>
           <Title>데이로그 작성</Title>
-          <PostButton>등록</PostButton>
+          <PostButton onClick={postBtnClick}>등록</PostButton>
         </Header>
         <Body>
           <Content>
             <TextArea 
               maxLength={400}
               placeholder='공간에서의 경험이나 정보를 자세히 작성할수록 다른 데이트리퍼에게 큰 도움이 될 거에요.'
+              ref={textAreaInput}
             />
             <PhotoContent>
               <PhotoList>
