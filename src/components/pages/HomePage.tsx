@@ -14,7 +14,6 @@ const Base = styled.div`
 
 const NavigationWrapper = styled.div`
   background-color: beige;
-  display: flex;
   position: sticky;
   top: 0;
   height: 100vh;
