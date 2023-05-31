@@ -10,14 +10,14 @@ const Base = styled.div`
 `;
 
 const NavigationWrapper = styled.div`
-  background-color: beige;
+  background-color: pink;
   position: sticky;
   top: 0;
   height: 100vh;
 `;
 
 const Body = styled.div`
-  background-color: blueviolet;
+  background-color: beige;
   width: 100%;
 `;
 
