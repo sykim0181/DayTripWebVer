@@ -12,7 +12,7 @@ const Header = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-  margin: 80px 0 40px 10px;
+  margin: 80px 0 40px 20px;
 `;
 
 const Title = styled.div`
@@ -20,13 +20,22 @@ const Title = styled.div`
   font-weight: bold;
 `;
 
+const PostButton = styled.div`
+  background-color: pink;
+  padding: 10px 25px;
+  border-radius: 15px;
+  font-weight: bold;
+  position: absolute;
+  right: 120px;
+  cursor: pointer;
+`;
 
 const Body = styled.div`
   /* background-color: #ffb69c; */
 `;
 
 const Content = styled.div`
-  margin: 0 0 10px 10px;
+  margin: 0 0 10px 20px;
   display: flex;
 `;
 
@@ -125,6 +134,7 @@ const PostPage: React.FC = () => {
       <BasicPage>
         <Header>
           <Title>데이로그 작성</Title>
+          <PostButton>등록</PostButton>
         </Header>
         <Body>
           <Content>

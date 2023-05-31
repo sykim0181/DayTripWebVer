@@ -12,6 +12,7 @@ const Base = styled.div`
 
 const Text = styled.div<{ isNecessary:boolean }>`
   padding: 10px;
+  padding-left: 20px;
   & h1 {
     font-size: 15px;
     margin: 0;
@@ -27,7 +28,7 @@ const ExtraText = styled.div`
 
 const BtnTgl = styled.div`
   position: absolute;
-  right: 10px;
+  right: 120px;
 `;
 
 const Button = styled.div`
