@@ -10,35 +10,50 @@ import { selectedNavAtom } from '../../atoms';
 
 
 const Base = styled.div`
-  width: fit-content;
-  height: fit-content;
+  background-color: aqua;
+  padding: 0 70px 0 20px;
+`;
+
+const Title = styled.div`
+  font-size: 45px;
+  margin: 65px 0 70px 0;
 `;
 
 const IconList = styled.ul`
   display: flex;
   flex-direction: column;
-  width: fit-content;
   padding: 0;
 
   & li {
     list-style: none;
-    padding: 30px 30px;
-    color: black;
   }
+  & li + li {
+    margin-top: 20px;
+  }
+
 `;
 
 const StyledLink = styled(Link)`
   color: black;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
 `;
 
+
 const Icon = styled.div`
-  font-size: 50px;
+  font-size: 30px;
   cursor: pointer;
 `;
 
+const Text = styled.div`
+  white-space: nowrap;
+  margin-left: 5px;
+`;
+
 const ProfileImg = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
 `;
 
@@ -47,6 +62,7 @@ const Navigation: React.FC = () => {
 
   return(
     <Base>
+      <Title>daytrip</Title>
       <IconList>
         <li>
           <StyledLink to="/" onClick={() => setSelectedNav("home")}>
@@ -57,7 +73,9 @@ const Navigation: React.FC = () => {
                 ) : (
                   <IoHomeOutline />
                 )
-              }            </Icon>
+              }            
+            </Icon>
+            <Text>홈</Text>
           </StyledLink>
         </li>
         <li>
@@ -71,6 +89,7 @@ const Navigation: React.FC = () => {
                 )
               }
             </Icon>
+            <Text>플레이스</Text>
           </StyledLink>
         </li>
         <li>
@@ -84,6 +103,7 @@ const Navigation: React.FC = () => {
                 )
               }
             </Icon>
+            <Text>글쓰기</Text>
           </StyledLink>
         </li>
         <li>
@@ -96,7 +116,8 @@ const Navigation: React.FC = () => {
                   <IoBookmarkOutline />
                 )
               }            
-              </Icon>    
+              </Icon>
+              <Text>북마크</Text>    
           </StyledLink>
         </li>
         <li>
@@ -104,6 +125,7 @@ const Navigation: React.FC = () => {
             <Icon>
               <ProfileImg src='assets/ky.jpg' />
             </Icon>     
+            <Text>마이페이지</Text>
           </StyledLink>
         </li>
       </IconList>

@@ -15,7 +15,6 @@ const Base = styled.div`
 const NavigationWrapper = styled.div`
   background-color: beige;
   display: flex;
-  align-items: center;
   position: sticky;
   top: 0;
   height: 100vh;
@@ -34,9 +33,6 @@ const HomePage: React.FC = () => {
         <Navigation />
       </NavigationWrapper>
       <Body>
-        <Header isHome={true}>
-          <IconButton icon={AiOutlineBell} />
-        </Header>
       </Body>
     </Base>
   )
