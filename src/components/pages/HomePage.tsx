@@ -4,35 +4,19 @@ import Navigation from '../organisms/Navigation';
 import Header from '../organisms/Header';
 import IconButton from '../atoms/IconButton';
 import { AiOutlineBell } from 'react-icons/ai';
+import BasicPage from './BasicPage';
 
 const Base = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  background-color: aliceblue;
-`;
 
-const NavigationWrapper = styled.div`
-  background-color: beige;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-`;
-
-const Body = styled.div`
-  background-color: blueviolet;
-  width: 100%;
 `;
 
 
 const HomePage: React.FC = () => {
   return (
     <Base>
-      <NavigationWrapper>
-        <Navigation />
-      </NavigationWrapper>
-      <Body>
-      </Body>
+      <BasicPage>
+
+      </BasicPage>
     </Base>
   )
 }

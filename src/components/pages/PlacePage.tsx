@@ -5,23 +5,10 @@ import Navigation from '../organisms/Navigation';
 import { GiSettingsKnobs } from 'react-icons/gi';
 import Spacer from '../atoms/Spacer';
 import PlaceBlock from '../organisms/PlaceBlock';
+import BasicPage from './BasicPage';
 
 const Base = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  background-color: aliceblue;
-`;
 
-const NavigationWrapper = styled.div`
-  background-color: beige;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-`;
-
-const Body = styled.div`
-  width: 100%;
 `;
 
 const Map = styled.div`
@@ -65,10 +52,7 @@ const FilterStandard = styled.div`
 const PlacePage: React.FC = () => {
   return (
     <Base>
-      <NavigationWrapper>
-        <Navigation />
-      </NavigationWrapper>
-      <Body>
+      <BasicPage>
         <Map>
 
         </Map>
@@ -83,7 +67,7 @@ const PlacePage: React.FC = () => {
         <PlaceListPart>
           <PlaceBlock />
         </PlaceListPart>
-      </Body>
+      </BasicPage>
     </Base>
   )
 };

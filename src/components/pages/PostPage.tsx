@@ -1,16 +1,20 @@
 import React from 'react';
 import styled from '@emotion/styled/macro';
 import PostModal from '../organisms/PostModal';
+import Navigation from '../organisms/Navigation';
+import BasicPage from './BasicPage';
 
-const Base = styled.div``;
+const Base = styled.div`
 
-const Header = styled.div``;
+`;
 
 const PostPage: React.FC = () => {
 
   return (
     <Base>
-      <PostModal />
+      <BasicPage>
+        <PostModal />
+      </BasicPage>
     </Base>
   )
 }
