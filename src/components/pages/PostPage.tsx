@@ -120,7 +120,7 @@ const PostPage: React.FC = () => {
 
   const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files){
-      console.log(e.target.files[0]);
+      // console.log(e.target.files[0]);
       const reader = new FileReader();
       reader.readAsDataURL(e.target.files[0]);
       reader.onload = (event) => {
@@ -136,12 +136,16 @@ const PostPage: React.FC = () => {
 
   const postBtnClick = async () => {
     try {
-      console.log(textAreaInput.current?.value);
-      const docRef = await addDoc(collection(db, "posts"), {
-        textContent: textAreaInput.current?.value,
-        photos: imgUrlList,
-        
-      });
+      // console.log(textAreaInput.current?.value);
+      if (imgUrlList.length > 0){
+        await addDoc(collection(db, "posts"), {
+          textContent: textAreaInput.current?.value,
+          photos: imgUrlList,
+          
+        }).then(() => alert("게시물 등록!"));
+      } else {
+        alert("사진을 1장 이상 추가해주세요!")
+      }
     } catch(e) {
       console.error("Error adding document: ", e);
     }
