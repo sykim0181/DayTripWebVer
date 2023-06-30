@@ -141,6 +141,7 @@ const PostPage: React.FC = () => {
         await addDoc(collection(db, "posts"), {
           textContent: textAreaInput.current?.value,
           photos: imgUrlList,
+          writer: "soxoy0181",
           
         }).then(() => alert("게시물 등록!"));
       } else {
