@@ -10,8 +10,9 @@ import { selectedNavAtom } from '../../atoms';
 
 
 const Base = styled.div`
-  background-color: aqua;
+  /* background-color: lightgray; */
   padding: 0 70px 0 20px;
+  /* height: 100%; */
 `;
 
 const Title = styled.div`

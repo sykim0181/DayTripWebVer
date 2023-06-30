@@ -8,7 +8,7 @@ import Spacer from '../atoms/Spacer';
 
 
 const Base = styled.div`
-
+  background-color: #b8b8b8;
 `;
 
 
@@ -19,7 +19,7 @@ const Contents = styled.div`
 `;
 
 const ContentHeader = styled.div`
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
   width: 100%;
   height: 150px;
   display: flex;

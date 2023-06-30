@@ -6,18 +6,18 @@ const Base = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
 `;
 
 const NavigationWrapper = styled.div`
-  background-color: pink;
+  background-color: #dadada;
   position: sticky;
   top: 0;
   height: 100vh;
 `;
 
 const Body = styled.div`
-  background-color: beige;
+  /* background-color: beige; */
   width: 100%;
 `;
 

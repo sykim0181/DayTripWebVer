@@ -7,7 +7,7 @@ import app from '../../Firebase';
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
 
 const Base = styled.div`
-
+  background-color: aliceblue;
 `;
 
 const Header = styled.div`
