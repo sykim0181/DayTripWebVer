@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled/macro';
 import { AiOutlineCheckCircle } from 'react-icons/ai';
 import { IoBookmarkOutline } from 'react-icons/io5';
+import { place } from '../pages/PlacePage';
 
 const Base = styled.div``;
 
@@ -13,7 +14,7 @@ const Header = styled.div`
 `;
 
 const Title = styled.div`
-  background-color: beige;
+  /* background-color: beige; */
   width: fit-content;
 `;
 
@@ -29,7 +30,7 @@ const Explanation = styled.p`
 
 const Buttons = styled.div`
   display: flex;
-  background-color: aqua;
+  /* background-color: aqua; */
   position: absolute;
   right: 0;
 `;
@@ -51,13 +52,16 @@ const PhotoList = styled.ul`
 
 const Photo = styled.img``;
 
-const PlaceBlock: React.FC = () => {
+interface Props {
+  place: place
+}
+const PlaceBlock: React.FC<Props> = (props) => {
   return (
     <Base>
       <Header>
         <Title>
-          <Name>레고블랭</Name>
-          <Explanation>광진구, 건대 카페</Explanation>
+          <Name>{props.place.name}</Name>
+          <Explanation>{`${props.place.brief_address} · ${props.place.category}`}</Explanation>
         </Title>
         <Buttons>
           <Button><AiOutlineCheckCircle /></Button>

@@ -11,11 +11,11 @@ const Base = styled.div`
 `;
 
 const Header = styled.div`
-  background-color: brown;
+  /* background-color: brown; */
 `;
 
 const UserProfile = styled.div`
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
   display: flex;
   align-items: center;
 `;
@@ -35,7 +35,7 @@ const UserProfilePhoto = styled.div`
 `;
 
 const PhotoContainer = styled.div`
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
   display: flex;
   align-items: center;
 `;
