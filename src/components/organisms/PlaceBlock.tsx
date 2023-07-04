@@ -64,8 +64,12 @@ const PlaceBlock: React.FC<Props> = (props) => {
           <Explanation>{`${props.place.brief_address} · ${props.place.category}`}</Explanation>
         </Title>
         <Buttons>
-          <Button><AiOutlineCheckCircle /></Button>
-          <Button><IoBookmarkOutline /></Button>
+          <Button>
+            <AiOutlineCheckCircle />
+          </Button>
+          <Button>
+            <IoBookmarkOutline />
+          </Button>
         </Buttons>
       </Header>
       <Body>
